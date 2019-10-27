@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C974B0F42365ADDA00480162 /* SearchTVShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F32365ADDA00480162 /* SearchTVShowWorker.swift */; };
+		C974B0F62365ADE700480162 /* SearchTVShowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F52365ADE700480162 /* SearchTVShowStore.swift */; };
 		C9B89EAD2365AB1B009D2E28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */; };
 		C9B89EAF2365AB1B009D2E28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */; };
 		C9B89EB12365AB1B009D2E28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EB02365AB1B009D2E28 /* ViewController.swift */; };
@@ -15,6 +17,13 @@
 		C9B89EB92365AB20009D2E28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B89EB72365AB20009D2E28 /* LaunchScreen.storyboard */; };
 		C9B89EC42365AB20009D2E28 /* EberryTVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EC32365AB20009D2E28 /* EberryTVAppTests.swift */; };
 		C9B89ECF2365AB20009D2E28 /* EberryTVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89ECE2365AB20009D2E28 /* EberryTVAppUITests.swift */; };
+		C9B89EE12365ABE0009D2E28 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EE02365ABE0009D2E28 /* Model.swift */; };
+		C9B89EE52365AC2E009D2E28 /* SearchTVShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EE42365AC2E009D2E28 /* SearchTVShowInteractor.swift */; };
+		C9B89EE72365AC3B009D2E28 /* SearchTVShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EE62365AC3B009D2E28 /* SearchTVShowPresenter.swift */; };
+		C9B89EE92365AC4B009D2E28 /* SearchTVShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EE82365AC4B009D2E28 /* SearchTVShowRouter.swift */; };
+		C9B89EEB2365AC6C009D2E28 /* SearchTVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EEA2365AC6C009D2E28 /* SearchTVShowViewController.swift */; };
+		C9B89EED2365AD03009D2E28 /* SearchTVShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EEC2365AD03009D2E28 /* SearchTVShowModel.swift */; };
+		C9B89EEF2365AD12009D2E28 /* SearchTVShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B89EEE2365AD12009D2E28 /* SearchTVShow.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C974B0F32365ADDA00480162 /* SearchTVShowWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowWorker.swift; sourceTree = "<group>"; };
+		C974B0F52365ADE700480162 /* SearchTVShowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowStore.swift; sourceTree = "<group>"; };
 		C9B89EA92365AB1B009D2E28 /* EberryTVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EberryTVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +60,13 @@
 		C9B89ECA2365AB20009D2E28 /* EberryTVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EberryTVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B89ECE2365AB20009D2E28 /* EberryTVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EberryTVAppUITests.swift; sourceTree = "<group>"; };
 		C9B89ED02365AB20009D2E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B89EE02365ABE0009D2E28 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C9B89EE42365AC2E009D2E28 /* SearchTVShowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowInteractor.swift; sourceTree = "<group>"; };
+		C9B89EE62365AC3B009D2E28 /* SearchTVShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowPresenter.swift; sourceTree = "<group>"; };
+		C9B89EE82365AC4B009D2E28 /* SearchTVShowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowRouter.swift; sourceTree = "<group>"; };
+		C9B89EEA2365AC6C009D2E28 /* SearchTVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowViewController.swift; sourceTree = "<group>"; };
+		C9B89EEC2365AD03009D2E28 /* SearchTVShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowModel.swift; sourceTree = "<group>"; };
+		C9B89EEE2365AD12009D2E28 /* SearchTVShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTVShow.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C974B0F12365ADC000480162 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				C974B0F32365ADDA00480162 /* SearchTVShowWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		C974B0F22365ADC500480162 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				C974B0F52365ADE700480162 /* SearchTVShowStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 		C9B89EA02365AB1B009D2E28 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +133,8 @@
 		C9B89EAB2365AB1B009D2E28 /* EberryTVApp */ = {
 			isa = PBXGroup;
 			children = (
+				C9B89EE22365AC05009D2E28 /* Scenes */,
+				C9B89EDC2365AB67009D2E28 /* Shared */,
 				C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */,
 				C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */,
 				C9B89EB02365AB1B009D2E28 /* ViewController.swift */,
@@ -126,6 +162,45 @@
 				C9B89ED02365AB20009D2E28 /* Info.plist */,
 			);
 			path = EberryTVAppUITests;
+			sourceTree = "<group>";
+		};
+		C9B89EDC2365AB67009D2E28 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C974B0F22365ADC500480162 /* Stores */,
+				C974B0F12365ADC000480162 /* Workers */,
+				C9B89EDD2365AB6F009D2E28 /* Model */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C9B89EDD2365AB6F009D2E28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9B89EE02365ABE0009D2E28 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9B89EE22365AC05009D2E28 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C9B89EE32365AC11009D2E28 /* SearchTVShow */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C9B89EE32365AC11009D2E28 /* SearchTVShow */ = {
+			isa = PBXGroup;
+			children = (
+				C9B89EE42365AC2E009D2E28 /* SearchTVShowInteractor.swift */,
+				C9B89EE62365AC3B009D2E28 /* SearchTVShowPresenter.swift */,
+				C9B89EE82365AC4B009D2E28 /* SearchTVShowRouter.swift */,
+				C9B89EEA2365AC6C009D2E28 /* SearchTVShowViewController.swift */,
+				C9B89EEC2365AD03009D2E28 /* SearchTVShowModel.swift */,
+				C9B89EEE2365AD12009D2E28 /* SearchTVShow.storyboard */,
+			);
+			path = SearchTVShow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +310,7 @@
 				C9B89EB92365AB20009D2E28 /* LaunchScreen.storyboard in Resources */,
 				C9B89EB62365AB20009D2E28 /* Assets.xcassets in Resources */,
 				C9B89EB42365AB1B009D2E28 /* Main.storyboard in Resources */,
+				C9B89EEF2365AD12009D2E28 /* SearchTVShow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +336,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B89EB12365AB1B009D2E28 /* ViewController.swift in Sources */,
+				C974B0F62365ADE700480162 /* SearchTVShowStore.swift in Sources */,
 				C9B89EAD2365AB1B009D2E28 /* AppDelegate.swift in Sources */,
+				C9B89EE92365AC4B009D2E28 /* SearchTVShowRouter.swift in Sources */,
+				C9B89EE52365AC2E009D2E28 /* SearchTVShowInteractor.swift in Sources */,
+				C974B0F42365ADDA00480162 /* SearchTVShowWorker.swift in Sources */,
 				C9B89EAF2365AB1B009D2E28 /* SceneDelegate.swift in Sources */,
+				C9B89EED2365AD03009D2E28 /* SearchTVShowModel.swift in Sources */,
+				C9B89EE12365ABE0009D2E28 /* Model.swift in Sources */,
+				C9B89EEB2365AC6C009D2E28 /* SearchTVShowViewController.swift in Sources */,
+				C9B89EE72365AC3B009D2E28 /* SearchTVShowPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
