@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C974B0F42365ADDA00480162 /* SearchTVShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F32365ADDA00480162 /* SearchTVShowWorker.swift */; };
-		C974B0F62365ADE700480162 /* SearchTVShowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F52365ADE700480162 /* SearchTVShowStore.swift */; };
+		C974B0F62365ADE700480162 /* SearchTVShowAPIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F52365ADE700480162 /* SearchTVShowAPIStore.swift */; };
 		C9B89EAD2365AB1B009D2E28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */; };
 		C9B89EAF2365AB1B009D2E28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */; };
 		C9B89EB12365AB1B009D2E28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EB02365AB1B009D2E28 /* ViewController.swift */; };
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		C974B0F32365ADDA00480162 /* SearchTVShowWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowWorker.swift; sourceTree = "<group>"; };
-		C974B0F52365ADE700480162 /* SearchTVShowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowStore.swift; sourceTree = "<group>"; };
+		C974B0F52365ADE700480162 /* SearchTVShowAPIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowAPIStore.swift; sourceTree = "<group>"; };
 		C9B89EA92365AB1B009D2E28 /* EberryTVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EberryTVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		C974B0F22365ADC500480162 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				C974B0F52365ADE700480162 /* SearchTVShowStore.swift */,
+				C974B0F52365ADE700480162 /* SearchTVShowAPIStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B89EB12365AB1B009D2E28 /* ViewController.swift in Sources */,
-				C974B0F62365ADE700480162 /* SearchTVShowStore.swift in Sources */,
+				C974B0F62365ADE700480162 /* SearchTVShowAPIStore.swift in Sources */,
 				C9B89EAD2365AB1B009D2E28 /* AppDelegate.swift in Sources */,
 				C9B89EE92365AC4B009D2E28 /* SearchTVShowRouter.swift in Sources */,
 				C9B89EE52365AC2E009D2E28 /* SearchTVShowInteractor.swift in Sources */,

@@ -14,9 +14,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     
-        SearchTVShowStore().search(query: "boys") { (tvshows, error) in
-            print(tvshows)
-        }
     }
 
 

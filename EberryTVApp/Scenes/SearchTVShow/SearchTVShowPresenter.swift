@@ -8,11 +8,19 @@
 
 import Foundation
 
-protocol SearchTVShowPresentationLogic {
-    
+protocol SearchTVShowPresentationLogic: class {
+ 
+    func presentSearchTVShow(response: SearchTVShow.SearchTVShow.Response)
+
 }
 
 class SearchTVShowPresenter: SearchTVShowPresentationLogic {
     
+    weak var view: SearchTVShowDisplayLogic?
     
+    func presentSearchTVShow(response: SearchTVShow.SearchTVShow.Response) {
+        
+        let viewModel =  SearchTVShow.SearchTVShow.ViewModel(tvShows: response.tvShows)
+        view?.displaySearchTVShow(viewModel: viewModel)
+    }
 }

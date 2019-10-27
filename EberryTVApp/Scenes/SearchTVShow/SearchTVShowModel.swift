@@ -14,11 +14,12 @@ struct SearchTVShow{
         struct Request {
             var query: String?
         }
+        
         struct Response {
-            
+            var tvShows: TVShows?
         }
         struct ViewModel {
-            
+            var tvShows: TVShows?
         }
     }
 }

@@ -8,52 +8,63 @@
 
 import UIKit
 
-class SearchTVShowViewController: UITableViewController {
+protocol SearchTVShowDisplayLogic: class {
+    
+    func displaySearchTVShow(viewModel: SearchTVShow.SearchTVShow.ViewModel)
+}
 
+class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogic{
+
+    var interactor: SearchTVShowBusinessLogic?
+    var router: SearchTVShowRoutingLogic?
+    
+    var tvShows: TVShows?
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func setup() {
+        let view = self
+        let interactor = SearchTVShowInteractor()
+        let presenter = SearchTVShowPresenter()
+        let router = SearchTVShowRouter()
+        
+        view.interactor = interactor
+        view.router = router
+        
+        interactor.presenter = presenter
+        
+        presenter.view = view
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+
+    func displaySearchTVShow(viewModel: SearchTVShow.SearchTVShow.ViewModel) {
+            
+        self.tvShows = viewModel.tvShows
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        guard tvShows != nil
+            else { return 0 }
+        return 1
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tvShows?.count ?? 0
     }
 
-    /*
-    overrisde func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-   
+    
+    
 
 }

@@ -1,5 +1,5 @@
 //
-//  SearchTVShowStore.swift
+//  SearchTVShowAPIStore.swift
 //  EberryTVApp
 //
 //  Created by Mohamed Diaa on 2019-10-27.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class SearchTVShowStore {
+class SearchTVShowAPIStore: SearchTVShowStoreProtocol {
     
     static let apiURL = "http://api.tvmaze.com/search/shows"
     
     func search(query: String, completion: @escaping(_ tvShows: TVShows?, _ error: Error?)->()) {
         
         let session = URLSession.shared
-        guard let url = URL(string: "\(SearchTVShowStore.apiURL)?q=\(query)")
+        guard let url = URL(string: "\(SearchTVShowAPIStore.apiURL)?q=\(query)")
             else { return }
         
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
