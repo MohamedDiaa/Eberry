@@ -6,69 +6,10 @@
 //  Copyright © 2019 Mohamed Diaa. All rights reserved.
 //
 import Foundation
-/*
 
-     score = "13.434177";
-     show =     {
-         "_links" =         {
-             previousepisode =             {
-                 href = "http://api.tvmaze.com/episodes/1492665";
-             };
-             self =             {
-                 href = "http://api.tvmaze.com/shows/4252";
-             };
-         };
-         externals =         {
-             imdb = tt3815412;
-             thetvdb = 278640;
-             tvrage = 34907;
-         };
-         genres =         (
-             Drama,
-             War,
-             Medical
-         );
-         id = 4252;
-         image =         {
-             medium = "http://static.tvmaze.com/uploads/images/medium_portrait/133/334764.jpg";
-             original = "http://static.tvmaze.com/uploads/images/original_untouched/133/334764.jpg";
-         };
-         language = English;
-         name = "Our Girl";
-         network =         {
-             country =             {
-                 code = GB;
-                 name = "United Kingdom";
-                 timezone = "Europe/London";
-             };
-             id = 12;
-             name = "BBC One";
-         };
-         officialSite = "http://www.bbc.co.uk/programmes/p0260ych";
-         premiered = "2014-09-21";
-         rating =         {
-             average = "8.300000000000001";
-         };
-         runtime = 60;
-         schedule =         {
-             days =             (
-                 Tuesday
-             );
-             time = "21:00";
-         };
-         status = Running;
-         summary = "<p>Drama following the extraordinary adventures of female medics in the British Army.</p>";
-         type = Scripted;
-         updated = 1551974006;
-         url = "http://www.tvmaze.com/shows/4252/our-girl";
-         webChannel = "<null>";
-         weight = 93;
-     };
- },
- */
  import Foundation
 
- // MARK: - WelcomeElement
+ // MARK: - TVShow
  struct TVShow: Codable {
      var score: Double?
      var show: Show?

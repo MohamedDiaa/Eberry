@@ -41,9 +41,15 @@ class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAppearance()
     }
 
-
+    func setupAppearance(){
+        
+        let nib = UINib(nibName: String(describing: TVShowCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: String(describing: TVShowCell.self))
+    }
+    
     func displaySearchTVShow(viewModel: SearchTVShow.SearchTVShow.ViewModel) {
             
         self.tvShows = viewModel.tvShows
@@ -57,15 +63,29 @@ class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogi
     override func numberOfSections(in tableView: UITableView) -> Int {
         guard tvShows != nil
             else { return 0 }
-        return  0 //1
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return  0 //tvShows?.count ?? 0
+        return tvShows?.count ?? 0
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TVShowCell.self)) as? TVShowCell
+            else { return TVShowCell() }
+        
+        guard let tvShows = self.tvShows, tvShows.count > indexPath.row
+            else { return cell }
+        
+        cell.showLabel.text = tvShows[indexPath.row].show?.name
+        cell.showDesc.text = tvShows[indexPath.row].show?.genres?.compactMap{ $0 }.joined(separator: ",")
+        
+        
+        return cell
+    }
     
     // MARK: - Search bar textDidChange delegate
     
