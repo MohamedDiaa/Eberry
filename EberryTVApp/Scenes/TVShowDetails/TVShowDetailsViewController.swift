@@ -83,7 +83,8 @@ class TVShowDetailsViewController: UITableViewController, TVShowDetailsDisplayLo
         
         cell.showLabel.text = tvShow.show?.name
         cell.showDesc.text = tvShow.show?.genres?.compactMap{ $0 }.joined(separator: ",")
-        
+        cell.setImageFromUrl(imageURL: tvShow.show?.image?.medium)
+
         
         return cell
     }

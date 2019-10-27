@@ -89,7 +89,7 @@ class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogi
         
         cell.showLabel.text = tvShows[indexPath.row].show?.name
         cell.showDesc.text = tvShows[indexPath.row].show?.genres?.compactMap{ $0 }.joined(separator: ",")
-        
+        cell.setImageFromUrl(imageURL:  tvShows[indexPath.row].show?.image?.medium)
         
         return cell
     }
