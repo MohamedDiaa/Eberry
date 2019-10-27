@@ -30,10 +30,8 @@ struct SearchTVShow{
         }
         
         struct Response {
-            var selectedTVShow: TVShow?
         }
         struct ViewModel {
-            var selectedTVShow: TVShow?
         }
     }
 }

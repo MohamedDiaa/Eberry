@@ -17,7 +17,7 @@ protocol SearchTVShowDisplayLogic: class {
 class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogic, UISearchBarDelegate{
     
     var interactor: SearchTVShowBusinessLogic?
-    var router: SearchTVShowRoutingLogic?
+    var router: (SearchTVShowRoutingLogic & SearchTVShowDataPassing)?
     
     var tvShows: TVShows?
     
@@ -40,6 +40,7 @@ class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogi
         presenter.view = view
         
         router.viewController = view
+        router.dataStore = interactor
     }
     
     override func viewDidLoad() {

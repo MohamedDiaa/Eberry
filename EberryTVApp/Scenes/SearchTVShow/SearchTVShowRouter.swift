@@ -8,22 +8,35 @@
 
 import UIKit
 
-protocol SearchTVShowRoutingLogic {
+protocol SearchTVShowRoutingLogic: class {
  
     func routeToTVShowDetails()
 }
 
-class SearchTVShowRouter: SearchTVShowRoutingLogic {
+protocol SearchTVShowDataPassing: class{
+ 
+    var dataStore: SearchTVShowDataStore? { get }
+}
+
+class SearchTVShowRouter: SearchTVShowRoutingLogic, SearchTVShowDataPassing {
     
     weak var viewController: SearchTVShowViewController?
+    weak var dataStore: SearchTVShowDataStore?
     
     func routeToTVShowDetails() {
         
         let storyboard = UIStoryboard(name: String(describing: TVShowDetails.self), bundle: nil)
-             guard let vc = storyboard.instantiateInitialViewController()
+             guard let destination = storyboard.instantiateInitialViewController() as? TVShowDetailsViewController,
+                let router = destination.router
                  else { return }
              
+        passData(source: dataStore, destination: router.dataStore)
 
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        viewController?.navigationController?.pushViewController(destination, animated: true)
+    }
+    
+    func passData(source: SearchTVShowDataStore?, destination: TVShowDetailsDataStore?) {
+        
+        destination?.tvShow = source?.selectedTVShow
     }
 }

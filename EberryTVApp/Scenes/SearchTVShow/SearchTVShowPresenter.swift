@@ -25,7 +25,7 @@ class SearchTVShowPresenter: SearchTVShowPresentationLogic {
     }
     
     func presentSelectTVShowDetails(response: SearchTVShow.SelectTVShowDetails.Response) {
-        let viewModel = SearchTVShow.SelectTVShowDetails.ViewModel(selectedTVShow: response.selectedTVShow)
+        let viewModel = SearchTVShow.SelectTVShowDetails.ViewModel()
         view?.displaySelectTVShowDetails(viewModel: viewModel)
     }
 }

@@ -14,10 +14,16 @@ protocol SearchTVShowBusinessLogic: class {
     func selectTVShowDetails(request: SearchTVShow.SelectTVShowDetails.Request)
 }
 
-class SearchTVShowInteractor: SearchTVShowBusinessLogic {
+protocol SearchTVShowDataStore: class {
+
+    var selectedTVShow: TVShow? { get set }
+}
+
+class SearchTVShowInteractor: SearchTVShowBusinessLogic, SearchTVShowDataStore {
     
     var presenter: SearchTVShowPresentationLogic?
     var worker = SearchTVShowWorker()
+    var selectedTVShow: TVShow?
     
     func searchTVShow(request: SearchTVShow.SearchTVShow.Request) {
         
@@ -35,7 +41,8 @@ class SearchTVShowInteractor: SearchTVShowBusinessLogic {
     
     func selectTVShowDetails(request: SearchTVShow.SelectTVShowDetails.Request) {
         
-        let response = SearchTVShow.SelectTVShowDetails.Response(selectedTVShow: request.selectedTVShow)
+        self.selectedTVShow = request.selectedTVShow
+        let response = SearchTVShow.SelectTVShowDetails.Response()
         self.presenter?.presentSelectTVShowDetails(response: response)
     }
 }

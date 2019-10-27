@@ -15,7 +15,7 @@ class TVShowDetailsViewController: UITableViewController, TVShowDetailsDisplayLo
 
 
      var interactor: TVShowDetailsBusinessLogic?
-     var router: TVShowDetailsRoutingLogic?
+     var router: (TVShowDetailsRoutingLogic & TVShowDetailsDataPassing)?
      
      var tvShows: TVShows?
      

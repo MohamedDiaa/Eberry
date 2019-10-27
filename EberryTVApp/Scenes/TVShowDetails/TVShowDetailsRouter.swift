@@ -14,9 +14,11 @@ protocol TVShowDetailsRoutingLogic {
 
 protocol TVShowDetailsDataPassing {
     
+    var dataStore: TVShowDetailsDataStore? { get }
 }
 
 class TVShowDetailsRouter: TVShowDetailsRoutingLogic, TVShowDetailsDataPassing {
     
+    weak var dataStore: TVShowDetailsDataStore?
     
 }
