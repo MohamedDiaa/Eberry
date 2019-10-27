@@ -6,105 +6,155 @@
 //  Copyright © 2019 Mohamed Diaa. All rights reserved.
 //
 import Foundation
+/*
 
-// MARK: - WelcomeElement
-struct WelcomeElement: Codable {
-    let score: Double
-    let show: Show
-}
+     score = "13.434177";
+     show =     {
+         "_links" =         {
+             previousepisode =             {
+                 href = "http://api.tvmaze.com/episodes/1492665";
+             };
+             self =             {
+                 href = "http://api.tvmaze.com/shows/4252";
+             };
+         };
+         externals =         {
+             imdb = tt3815412;
+             thetvdb = 278640;
+             tvrage = 34907;
+         };
+         genres =         (
+             Drama,
+             War,
+             Medical
+         );
+         id = 4252;
+         image =         {
+             medium = "http://static.tvmaze.com/uploads/images/medium_portrait/133/334764.jpg";
+             original = "http://static.tvmaze.com/uploads/images/original_untouched/133/334764.jpg";
+         };
+         language = English;
+         name = "Our Girl";
+         network =         {
+             country =             {
+                 code = GB;
+                 name = "United Kingdom";
+                 timezone = "Europe/London";
+             };
+             id = 12;
+             name = "BBC One";
+         };
+         officialSite = "http://www.bbc.co.uk/programmes/p0260ych";
+         premiered = "2014-09-21";
+         rating =         {
+             average = "8.300000000000001";
+         };
+         runtime = 60;
+         schedule =         {
+             days =             (
+                 Tuesday
+             );
+             time = "21:00";
+         };
+         status = Running;
+         summary = "<p>Drama following the extraordinary adventures of female medics in the British Army.</p>";
+         type = Scripted;
+         updated = 1551974006;
+         url = "http://www.tvmaze.com/shows/4252/our-girl";
+         webChannel = "<null>";
+         weight = 93;
+     };
+ },
+ */
+ import Foundation
 
-// MARK: - Show
-struct Show: Codable {
-    let id: Int
-    let url: String
-    let name: String
-    let type: TypeEnum
-    let language: Language
-    let genres: [String]
-    let status: Status
-    let runtime: Int
-    let premiered: String?
-    let officialSite: String?
-    let schedule: Schedule
-    let rating: Rating
-    let weight: Int
-    let network, webChannel: Network?
-    let externals: Externals
-    let image: Image
-    let summary: String?
-    let updated: Int
-    let links: Links
+ // MARK: - WelcomeElement
+ struct TVShow: Codable {
+     var score: Double?
+     var show: Show?
+ }
 
-    enum CodingKeys: String, CodingKey {
-        case id, url, name, type, language, genres, status, runtime, premiered, officialSite, schedule, rating, weight, network, webChannel, externals, image, summary, updated
-        case links = "_links"
-    }
-}
+ // MARK: - Show
+ struct Show: Codable {
+     var id: Int?
+     var url: String?
+     var name: String?
+     var type: TypeEnum?
+     var language: String?
+     var genres: [String]?
+     var status: String?
+     var runtime: Int?
+     var premiered: String?
+     var officialSite: String?
+     var schedule: Schedule?
+     var rating: Rating?
+     var weight: Int?
+     var network, webChannel: Network?
+     var externals: Externals?
+     var image: Image?
+     var summary: String?
+     var updated: Int64?
+     var links: Links?
 
-// MARK: - Externals
-struct Externals: Codable {
-    let tvrage, thetvdb: Int?
-    let imdb: String?
-}
+     enum CodingKeys: String, CodingKey {
+         case id, url, name, type, language, genres, status, runtime, premiered, officialSite, schedule, rating, weight, network, webChannel, externals, image, summary, updated
+         case links = "_links"
+     }
+ }
 
-// MARK: - Image
-struct Image: Codable {
-    let medium, original: String
-}
+ // MARK: - Externals
+ struct Externals: Codable {
+     var tvrage, thetvdb: Int?
+     var imdb: String?
+ }
 
-enum Language: String, Codable {
-    case english = "English"
-    case japanese = "Japanese"
-    case mongolian = "Mongolian"
-}
+ // MARK: - Image
+ struct Image: Codable {
+     var medium, original: String?
+ }
 
-// MARK: - Links
-struct Links: Codable {
-    let linksSelf: Previousepisode
-    let previousepisode: Previousepisode?
+ // MARK: - Links
+ struct Links: Codable {
+     var linksSelf, previousepisode: LinkContainer?
 
-    enum CodingKeys: String, CodingKey {
-        case linksSelf = "self"
-        case previousepisode
-    }
-}
+     enum CodingKeys: String, CodingKey {
+         case linksSelf = "self"
+         case previousepisode
+     }
+ }
 
-// MARK: - Previousepisode
-struct Previousepisode: Codable {
-    let href: String
-}
+ // MARK: - Previousepisode
+ struct LinkContainer: Codable {
+     var href: String?
+ }
 
-// MARK: - Network
-struct Network: Codable {
-    let id: Int
-    let name: String
-    let country: Country
-}
+ // MARK: - Network
+ struct Network: Codable {
+     var id: Int?
+     var name: String?
+     var country: Country?
+ }
 
-// MARK: - Country
-struct Country: Codable {
-    let name, code, timezone: String
-}
+ // MARK: - Country
+ struct Country: Codable {
+     var name, code, timezone: String?
+ }
 
-// MARK: - Rating
-struct Rating: Codable {
-    let average: Double?
-}
+ // MARK: - Rating
+ struct Rating: Codable {
+     var average: Double?
+ }
 
-// MARK: - Schedule
-struct Schedule: Codable {
-    let time: String
-    let days: [String]
-}
+ // MARK: - Schedule
+ struct Schedule: Codable {
+     var time: String?
+     var days: [String]?
+ }
 
-enum Status: String, Codable {
-    case ended = "Ended"
-    case running = "Running"
-}
+ enum TypeEnum: String, Codable {
+     case reality = "Reality"
+     case scripted = "Scripted"
+    case animation = "Animation"
+ }
 
-enum TypeEnum: String, Codable {
-    case reality = "Reality"
-    case scripted = "Scripted"
-}
-
-typealias Welcome = [WelcomeElement]
+ typealias TVShows = [TVShow]
