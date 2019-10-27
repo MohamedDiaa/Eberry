@@ -10,10 +10,16 @@ import Foundation
 
 protocol TVShowDetailsPresentationLogic {
     
+    func presentLoadShow(response: TVShowDetails.LoadShow.Response)
+
 }
 
 class TVShowDetailsPresenter: TVShowDetailsPresentationLogic {
     
     weak var view: TVShowDetailsDisplayLogic?
     
+    func presentLoadShow(response: TVShowDetails.LoadShow.Response) {
+        let viewModel = TVShowDetails.LoadShow.ViewModel(tvShow: response.tvShow)
+        view?.displayLoadShow(viewModel: viewModel)
+    }
 }

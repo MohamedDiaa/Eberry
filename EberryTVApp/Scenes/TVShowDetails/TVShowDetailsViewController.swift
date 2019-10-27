@@ -10,74 +10,87 @@ import UIKit
 
 protocol TVShowDetailsDisplayLogic: class {
     
+    func displayLoadShow(viewModel: TVShowDetails.LoadShow.ViewModel)
 }
+
 class TVShowDetailsViewController: UITableViewController, TVShowDetailsDisplayLogic {
-
-
-     var interactor: TVShowDetailsBusinessLogic?
-     var router: (TVShowDetailsRoutingLogic & TVShowDetailsDataPassing)?
-     
-     var tvShows: TVShows?
-     
-     override func awakeFromNib() {
-         super.awakeFromNib()
-         self.setup()
-     }
-     
-     func setup() {
-         let view = self
-         let interactor = TVShowDetailsInteractor()
-         let presenter = TVShowDetailsPresenter()
-         let router = TVShowDetailsRouter()
-         
-         view.interactor = interactor
-         view.router = router
-         
-         interactor.presenter = presenter
-         
-         presenter.view = view
-     }
-     
-     override func viewDidLoad() {
-         super.viewDidLoad()
-         setupAppearance()
-     }
-
-     func setupAppearance(){
-         
-         let nib = UINib(nibName: String(describing: TVShowCell.self), bundle: nil)
-         tableView.register(nib, forCellReuseIdentifier: String(describing: TVShowCell.self))
-     }
-     
-     
-     // MARK: - Table view data source
-
-     override func numberOfSections(in tableView: UITableView) -> Int {
-         guard tvShows != nil
-             else { return 0 }
-         return 1
-     }
-
-     
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         // #warning Incomplete implementation, return the number of rows
-         return tvShows?.count ?? 0
-     }
-
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TVShowCell.self)) as? TVShowCell
-             else { return TVShowCell() }
-         
-         guard let tvShows = self.tvShows, tvShows.count > indexPath.row
-             else { return cell }
-         
-         cell.showLabel.text = tvShows[indexPath.row].show?.name
-         cell.showDesc.text = tvShows[indexPath.row].show?.genres?.compactMap{ $0 }.joined(separator: ",")
-         
-         
-         return cell
-     }
-     
-     
+    var interactor: TVShowDetailsBusinessLogic?
+    var router: (TVShowDetailsRoutingLogic & TVShowDetailsDataPassing)?
+    
+    var tvShow: TVShow?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setup()
+    }
+    
+    func setup() {
+        let view = self
+        let interactor = TVShowDetailsInteractor()
+        let presenter = TVShowDetailsPresenter()
+        let router = TVShowDetailsRouter()
+        
+        view.interactor = interactor
+        view.router = router
+        
+        interactor.presenter = presenter
+        
+        presenter.view = view
+        
+        router.dataStore = interactor
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAppearance()
+        loadData()
+    }
+    
+    func setupAppearance(){
+        
+        let nib = UINib(nibName: String(describing: TVShowCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: String(describing: TVShowCell.self))
+    }
+    
+    func loadData() {
+        let request = TVShowDetails.LoadShow.Request()
+        interactor?.loadShow(request: request)
+    }
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        guard tvShow != nil
+            else { return 0 }
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        guard tvShow != nil
+            else { return 0 }
+        return 1
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TVShowCell.self)) as? TVShowCell
+            else { return TVShowCell() }
+        
+        guard let tvShow = self.tvShow
+            else { return cell }
+        
+        cell.showLabel.text = tvShow.show?.name
+        cell.showDesc.text = tvShow.show?.genres?.compactMap{ $0 }.joined(separator: ",")
+        
+        
+        return cell
+    }
+    
+    
+    func displayLoadShow(viewModel: TVShowDetails.LoadShow.ViewModel) {
+        self.tvShow = viewModel.tvShow
+        tableView.reloadData()
+    }
 }

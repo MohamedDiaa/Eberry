@@ -10,6 +10,7 @@ import Foundation
 
 protocol TVShowDetailsBusinessLogic: class {
     
+    func loadShow(request: TVShowDetails.LoadShow.Request)
 }
 
 protocol TVShowDetailsDataStore: class {
@@ -21,4 +22,9 @@ class TVShowDetailsInteractor: TVShowDetailsBusinessLogic, TVShowDetailsDataStor
     
     var presenter: TVShowDetailsPresentationLogic?
     var tvShow: TVShow?
+
+    func loadShow(request: TVShowDetails.LoadShow.Request) {
+        let response = TVShowDetails.LoadShow.Response(tvShow: tvShow)
+        presenter?.presentLoadShow(response: response)
+    }
 }

@@ -61,7 +61,7 @@ class SearchTVShowViewController: UITableViewController, SearchTVShowDisplayLogi
     }
     
     func displaySelectTVShowDetails(viewModel: SearchTVShow.SelectTVShowDetails.ViewModel) {
-     
+        
         router?.routeToTVShowDetails()
     }
     
