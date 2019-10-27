@@ -9,13 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    
+        
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let storyboard = UIStoryboard(name: String(describing: SearchTVShow.self), bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController()
+            else { return }
+        
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
 }
 
