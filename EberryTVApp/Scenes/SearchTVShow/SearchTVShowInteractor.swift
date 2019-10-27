@@ -11,6 +11,7 @@ import Foundation
 protocol SearchTVShowBusinessLogic: class {
     
     func searchTVShow(request: SearchTVShow.SearchTVShow.Request)
+    func selectTVShowDetails(request: SearchTVShow.SelectTVShowDetails.Request)
 }
 
 class SearchTVShowInteractor: SearchTVShowBusinessLogic {
@@ -30,5 +31,11 @@ class SearchTVShowInteractor: SearchTVShowBusinessLogic {
                 self?.presenter?.presentSearchTVShow(response: response)
             }
         }
+    }
+    
+    func selectTVShowDetails(request: SearchTVShow.SelectTVShowDetails.Request) {
+        
+        let response = SearchTVShow.SelectTVShowDetails.Response(selectedTVShow: request.selectedTVShow)
+        self.presenter?.presentSelectTVShowDetails(response: response)
     }
 }

@@ -6,12 +6,24 @@
 //  Copyright © 2019 Mohamed Diaa. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol SearchTVShowRoutingLogic {
-    
+ 
+    func routeToTVShowDetails()
 }
 
 class SearchTVShowRouter: SearchTVShowRoutingLogic {
     
+    weak var viewController: SearchTVShowViewController?
+    
+    func routeToTVShowDetails() {
+        
+        let storyboard = UIStoryboard(name: String(describing: TVShowDetails.self), bundle: nil)
+             guard let vc = storyboard.instantiateInitialViewController()
+                 else { return }
+             
+
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

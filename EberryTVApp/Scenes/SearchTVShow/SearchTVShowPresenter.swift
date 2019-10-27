@@ -11,7 +11,7 @@ import Foundation
 protocol SearchTVShowPresentationLogic: class {
  
     func presentSearchTVShow(response: SearchTVShow.SearchTVShow.Response)
-
+    func presentSelectTVShowDetails(response: SearchTVShow.SelectTVShowDetails.Response)
 }
 
 class SearchTVShowPresenter: SearchTVShowPresentationLogic {
@@ -22,5 +22,10 @@ class SearchTVShowPresenter: SearchTVShowPresentationLogic {
         
         let viewModel =  SearchTVShow.SearchTVShow.ViewModel(tvShows: response.tvShows)
         view?.displaySearchTVShow(viewModel: viewModel)
+    }
+    
+    func presentSelectTVShowDetails(response: SearchTVShow.SelectTVShowDetails.Response) {
+        let viewModel = SearchTVShow.SelectTVShowDetails.ViewModel(selectedTVShow: response.selectedTVShow)
+        view?.displaySelectTVShowDetails(viewModel: viewModel)
     }
 }

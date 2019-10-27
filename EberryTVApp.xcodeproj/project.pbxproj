@@ -11,6 +11,12 @@
 		C974B0F62365ADE700480162 /* SearchTVShowAPIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F52365ADE700480162 /* SearchTVShowAPIStore.swift */; };
 		C974B0FA2365C87F00480162 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0F92365C87F00480162 /* TVShowCell.swift */; };
 		C974B0FC2365C89000480162 /* TVShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C974B0FB2365C89000480162 /* TVShowCell.xib */; };
+		C974B0FE2365CB1200480162 /* TVShowDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0FD2365CB1200480162 /* TVShowDetailsInteractor.swift */; };
+		C974B1002365CB1D00480162 /* TVShowDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B0FF2365CB1D00480162 /* TVShowDetailsPresenter.swift */; };
+		C974B1022365CB2800480162 /* TVShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B1012365CB2800480162 /* TVShowDetailsViewController.swift */; };
+		C974B1042365CB3000480162 /* TVShowDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B1032365CB3000480162 /* TVShowDetailsRouter.swift */; };
+		C974B1062365CB3800480162 /* TVShowDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C974B1052365CB3800480162 /* TVShowDetails.storyboard */; };
+		C974B1082365CCD300480162 /* TVShowDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974B1072365CCD300480162 /* TVShowDetailsModel.swift */; };
 		C9B89EAD2365AB1B009D2E28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */; };
 		C9B89EAF2365AB1B009D2E28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */; };
 		C9B89EB12365AB1B009D2E28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89EB02365AB1B009D2E28 /* ViewController.swift */; };
@@ -50,6 +56,12 @@
 		C974B0F52365ADE700480162 /* SearchTVShowAPIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVShowAPIStore.swift; sourceTree = "<group>"; };
 		C974B0F92365C87F00480162 /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
 		C974B0FB2365C89000480162 /* TVShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVShowCell.xib; sourceTree = "<group>"; };
+		C974B0FD2365CB1200480162 /* TVShowDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowDetailsInteractor.swift; sourceTree = "<group>"; };
+		C974B0FF2365CB1D00480162 /* TVShowDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowDetailsPresenter.swift; sourceTree = "<group>"; };
+		C974B1012365CB2800480162 /* TVShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowDetailsViewController.swift; sourceTree = "<group>"; };
+		C974B1032365CB3000480162 /* TVShowDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowDetailsRouter.swift; sourceTree = "<group>"; };
+		C974B1052365CB3800480162 /* TVShowDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TVShowDetails.storyboard; sourceTree = "<group>"; };
+		C974B1072365CCD300480162 /* TVShowDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowDetailsModel.swift; sourceTree = "<group>"; };
 		C9B89EA92365AB1B009D2E28 /* EberryTVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EberryTVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B89EAC2365AB1B009D2E28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B89EAE2365AB1B009D2E28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +129,12 @@
 		C974B0F72365C69900480162 /* TVShowDetails */ = {
 			isa = PBXGroup;
 			children = (
+				C974B0FD2365CB1200480162 /* TVShowDetailsInteractor.swift */,
+				C974B0FF2365CB1D00480162 /* TVShowDetailsPresenter.swift */,
+				C974B1012365CB2800480162 /* TVShowDetailsViewController.swift */,
+				C974B1032365CB3000480162 /* TVShowDetailsRouter.swift */,
+				C974B1052365CB3800480162 /* TVShowDetails.storyboard */,
+				C974B1072365CCD300480162 /* TVShowDetailsModel.swift */,
 			);
 			path = TVShowDetails;
 			sourceTree = "<group>";
@@ -331,6 +349,7 @@
 			files = (
 				C9B89EB92365AB20009D2E28 /* LaunchScreen.storyboard in Resources */,
 				C974B0FC2365C89000480162 /* TVShowCell.xib in Resources */,
+				C974B1062365CB3800480162 /* TVShowDetails.storyboard in Resources */,
 				C9B89EB62365AB20009D2E28 /* Assets.xcassets in Resources */,
 				C9B89EB42365AB1B009D2E28 /* Main.storyboard in Resources */,
 				C9B89EEF2365AD12009D2E28 /* SearchTVShow.storyboard in Resources */,
@@ -360,10 +379,15 @@
 			files = (
 				C9B89EB12365AB1B009D2E28 /* ViewController.swift in Sources */,
 				C974B0F62365ADE700480162 /* SearchTVShowAPIStore.swift in Sources */,
+				C974B1002365CB1D00480162 /* TVShowDetailsPresenter.swift in Sources */,
 				C974B0FA2365C87F00480162 /* TVShowCell.swift in Sources */,
 				C9B89EAD2365AB1B009D2E28 /* AppDelegate.swift in Sources */,
 				C9B89EE92365AC4B009D2E28 /* SearchTVShowRouter.swift in Sources */,
+				C974B1042365CB3000480162 /* TVShowDetailsRouter.swift in Sources */,
+				C974B0FE2365CB1200480162 /* TVShowDetailsInteractor.swift in Sources */,
 				C9B89EE52365AC2E009D2E28 /* SearchTVShowInteractor.swift in Sources */,
+				C974B1022365CB2800480162 /* TVShowDetailsViewController.swift in Sources */,
+				C974B1082365CCD300480162 /* TVShowDetailsModel.swift in Sources */,
 				C974B0F42365ADDA00480162 /* SearchTVShowWorker.swift in Sources */,
 				C9B89EAF2365AB1B009D2E28 /* SceneDelegate.swift in Sources */,
 				C9B89EED2365AD03009D2E28 /* SearchTVShowModel.swift in Sources */,
